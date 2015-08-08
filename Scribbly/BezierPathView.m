@@ -46,6 +46,11 @@ typedef struct
     
 }
 
+-(void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+}
+
 -(void)setPathColor:(UIColor *)color
 {
     _pathColor = color;
