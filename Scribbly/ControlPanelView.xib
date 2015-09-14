@@ -11,19 +11,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab2-ix-t1Z">
-                    <rect key="frame" x="257" y="247" width="87" height="30"/>
+                    <rect key="frame" x="257" y="232" width="87" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="bci-mM-qLO"/>
+                    </constraints>
                     <state key="normal" title="Save Picture">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="savePicture:" destination="iN0-l3-epB" eventType="touchUpInside" id="2wj-ov-MlW"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDJ-XA-Zs9">
-                    <rect key="frame" x="256" y="285" width="89" height="30"/>
+                    <rect key="frame" x="256" y="280" width="89" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="qbL-Cv-poP"/>
+                    </constraints>
                     <state key="normal" title="Clear Picture">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="clearPicture:" destination="iN0-l3-epB" eventType="touchUpInside" id="R78-yW-Ckv"/>
+                    </connections>
                 </button>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXT-Dx-3cS">
-                    <rect key="frame" x="280" y="323" width="40" height="30"/>
+                    <rect key="frame" x="280" y="328" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="eAt-Hk-FGh"/>
+                    </constraints>
                     <state key="normal" title="Close">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -31,21 +46,13 @@
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ab2-ix-t1Z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0xY-x0-5lO"/>
-                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="centerX" secondItem="OXT-Dx-3cS" secondAttribute="centerX" id="9Qn-tt-QEb"/>
-                <constraint firstItem="OXT-Dx-3cS" firstAttribute="top" secondItem="dDJ-XA-Zs9" secondAttribute="bottom" constant="8" symbolic="YES" id="Lng-oO-XUk"/>
-                <constraint firstItem="Ab2-ix-t1Z" firstAttribute="centerX" secondItem="dDJ-XA-Zs9" secondAttribute="centerX" id="aAY-cm-lol"/>
-                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="top" secondItem="Ab2-ix-t1Z" secondAttribute="bottom" constant="8" symbolic="YES" id="quz-xw-30g"/>
-                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="smR-ga-ejS"/>
+                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8eh-EO-zey"/>
+                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fxp-2F-gaz"/>
+                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="top" secondItem="Ab2-ix-t1Z" secondAttribute="bottom" constant="8" symbolic="YES" id="SpE-cf-z5e"/>
+                <constraint firstItem="OXT-Dx-3cS" firstAttribute="top" secondItem="dDJ-XA-Zs9" secondAttribute="bottom" constant="8" symbolic="YES" id="hED-Oa-2zb"/>
+                <constraint firstItem="dDJ-XA-Zs9" firstAttribute="centerX" secondItem="OXT-Dx-3cS" secondAttribute="centerX" id="ks3-oV-DMw"/>
+                <constraint firstItem="Ab2-ix-t1Z" firstAttribute="centerX" secondItem="dDJ-XA-Zs9" secondAttribute="centerX" id="phA-pq-0aq"/>
             </constraints>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                    <integer key="value" value="3"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
         </view>
     </objects>
 </document>

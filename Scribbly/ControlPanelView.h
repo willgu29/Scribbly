@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ControlPanelViewDelegate <NSObject>
+
+-(void)savePicture;
+-(void)clearPicture;
+
+@end
+
 @interface ControlPanelView : UIView
+
+@property (nonatomic, assign) id delegate;
+
 
 @end

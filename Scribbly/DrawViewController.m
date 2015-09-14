@@ -9,13 +9,19 @@
 #import "DrawViewController.h"
 #import "BezierPathView.h"
 #import "ControlPanelView.h"
-@interface DrawViewController ()
+
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
+
+@interface DrawViewController () <ControlPanelViewDelegate>
 {
     BOOL isControlPanelShowing;
 }
 
 @property (nonatomic, strong) IBOutlet BezierPathView *drawView;
 @property (nonatomic, strong) ControlPanelView *cpView;
+
+@property (nonatomic, strong) ALAssetsLibrary *photoLibrary;
+
 
 @property (nonatomic, strong) UIButton *lastSelectedColorButton;
 
@@ -28,16 +34,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _photoLibrary = [[ALAssetsLibrary alloc] init];
+
     isControlPanelShowing = NO;
     
    
-//
-//    [_drawView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-//
-//    
-//    _drawView.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
-//    
     [self registerOrientationChangeObserver];
 
 }
@@ -48,6 +49,7 @@
     //INIT cpView
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ControlPanelView" owner:self options:nil];
     _cpView = [nib objectAtIndex:0];
+    _cpView.delegate = self;
 
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -63,8 +65,7 @@
 {
     if (isControlPanelShowing)
     {
-        [_cpView removeFromSuperview];
-        isControlPanelShowing = NO;
+        [self closeControlPanel];
     }
 }
 
@@ -95,69 +96,31 @@
     isControlPanelShowing = YES;
 }
 
-#pragma mark - Create View Objects
--(void)createColorButtons
-{
-    NSArray *colorArray = @[[UIColor whiteColor],[UIColor redColor], [UIColor orangeColor], [UIColor yellowColor], [UIColor greenColor], [UIColor blueColor], [UIColor purpleColor], [UIColor blackColor]];
-    
-    NSMutableArray *buttonArray = [[NSMutableArray alloc] init];
-    for (UIColor *color in colorArray) {
-      
-        
-        UIButton *newButton = [[UIButton alloc] init];
-        newButton.translatesAutoresizingMaskIntoConstraints = NO;
-        newButton.backgroundColor = color;
-    
-        if ([color isEqual:[UIColor whiteColor]]) {
-            _lastSelectedColorButton = newButton;
-        }
-        
-        [buttonArray addObject:newButton];
-    }
+#pragma mark - ControlPanelDelegate
 
+-(void)savePicture
+{
+    [self closeControlPanel];
     
-    
+    UIImage *collageImage = [self formNewUIImage];
+    [self.photoLibrary saveImage:collageImage toAlbum:@"Scribbly" completion:^(NSURL *assetURL, NSError *error) {
+        NSLog(@"Asset URL: %@", assetURL);
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Saved" message:@"Your photo has been saved in both your Scribbly album \nand camera roll!" delegate:nil cancelButtonTitle:@"Great!" otherButtonTitles:nil];
+        [alertView show];
+        //_isSaved = YES;
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Hmmm..." message:@"Something went wrong. Please try again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alertView show];
+    }];
 }
-
-#pragma mark - Constraints 
-
--(void)addDrawViewConstraints
+-(void)clearPicture
 {
-    NSLayoutConstraint *equalWidth = [NSLayoutConstraint constraintWithItem:_drawView attribute:NSLayoutAttributeWidth relatedBy:0 toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0];
-    
-    NSLayoutConstraint *top = [NSLayoutConstraint
-                               constraintWithItem:_drawView
-                               attribute:NSLayoutAttributeTop
-                               relatedBy:NSLayoutRelationEqual
-                               toItem:self.view
-                               attribute:NSLayoutAttributeTop
-                               multiplier:1.0f
-                               constant:0.f];
-    NSLayoutConstraint *leading = [NSLayoutConstraint
-                                   constraintWithItem:_drawView
-                                   attribute:NSLayoutAttributeLeading
-                                   relatedBy:NSLayoutRelationEqual
-                                   toItem:self.view
-                                   attribute:NSLayoutAttributeLeading
-                                   multiplier:1.0f
-                                   constant:0.f];
-    
-    
-    NSLayoutConstraint *height =[NSLayoutConstraint
-                                 constraintWithItem:_drawView
-                                 attribute:NSLayoutAttributeHeight
-                                 relatedBy:0
-                                 toItem:self.view
-                                 attribute:NSLayoutAttributeHeight
-                                 multiplier:0.66
-                                 constant:0];
-    
-
-    [self.view addConstraint:equalWidth];
-    [self.view addConstraint:top];
-    [self.view addConstraint:leading];
-    [self.view addConstraint:height];
-    
+    [self closeControlPanel];
+    [_drawView eraseDrawing:nil];
 }
 
 #pragma mark - Orientation Changes
@@ -173,7 +136,7 @@
 -(void)orientationChanged:(NSNotification *)notification
 {
     //Reorient control panel
-    [_cpView removeFromSuperview];
+    [self closeControlPanel];
    
     
     UIDevice * device = notification.object;
@@ -194,5 +157,27 @@
 
 }
 
+#pragma mark - Helper functions
+-(UIImage *)formNewUIImage
+{
+    
+    
+    CGSize displayBounds = self.drawView.bounds.size;
+    UIImage *myImage;
+
+    UIGraphicsBeginImageContextWithOptions(displayBounds, NO, 0);
+    [self.drawView.layer renderInContext:UIGraphicsGetCurrentContext()];
+
+    myImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return myImage;
+}
+
+-(void)closeControlPanel
+{
+    [_cpView removeFromSuperview];
+    isControlPanelShowing = NO;
+}
 
 @end

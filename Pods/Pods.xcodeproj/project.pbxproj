@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CF1BF3B27C12D3DC63B2C9B93FD574A /* ALAssetsLibrary+CustomPhotoAlbum.h in Headers */ = {isa = PBXBuildFile; fileRef = 19F453CDA6B78716E4F188DEA3808A3C /* ALAssetsLibrary+CustomPhotoAlbum.h */; };
+		49BE8C478450ED437785CCFD4AAEF8C9 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 611547FD105CD3C018E74C55C683C102 /* ALAssetsLibrary+CustomPhotoAlbum.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		608C41F99027CCC7478C607F4A2E3731 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2C14E42F7F32D65B0D0BE77E5CF427 /* Foundation.framework */; };
+		6DC2430975254E5C81AC98CC1FCA8F66 /* ALAssetsLibrary-CustomPhotoAlbum-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5927D031B00FBAA6F6CF347857A8EF1A /* ALAssetsLibrary-CustomPhotoAlbum-dummy.m */; };
+		AA5C980FBD139238F2E0B72E5F2C83F0 /* Pods-Scribbly-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C779212E696A0770FA1113256E98872E /* Pods-Scribbly-dummy.m */; };
+		AF9276976D10A9D7F2E25968D890679E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2C14E42F7F32D65B0D0BE77E5CF427 /* Foundation.framework */; };
+		B85BB9C1EADC9A0CEF2840BA22ACA491 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3DE092DD4DA35273CD2CFC5F1D2E51 /* AssetsLibrary.framework */; };
+		DEF3DED48299FE000CEBEB8563E4D11B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B9D36456B3F98ACB03DB7900E96918 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45EB73EC2A13676BCF1967E9B2319FD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D02F66032E80DA426F9D3F3ACBD56CD9;
+			remoteInfo = "ALAssetsLibrary-CustomPhotoAlbum";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A4859542AAACCD095034AD4F81B7E50 /* libPods-Scribbly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scribbly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F453CDA6B78716E4F188DEA3808A3C /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALAssetsLibrary+CustomPhotoAlbum.h"; path = "ALAssetsLibrary-CustomPhotoAlbum/ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		2A6904C226982E5A895D64C41BF506A1 /* ALAssetsLibrary-CustomPhotoAlbum-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary-CustomPhotoAlbum-prefix.pch"; sourceTree = "<group>"; };
+		2D2C14E42F7F32D65B0D0BE77E5CF427 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3AE482697171009427C05E89D6B3B7FD /* ALAssetsLibrary-CustomPhotoAlbum.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ALAssetsLibrary-CustomPhotoAlbum.xcconfig"; sourceTree = "<group>"; };
+		42173380681DC665ED9FD1907FFD9728 /* libALAssetsLibrary-CustomPhotoAlbum.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libALAssetsLibrary-CustomPhotoAlbum.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52AC9102F8B916F058A5540531E85E6E /* Pods-Scribbly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Scribbly.release.xcconfig"; sourceTree = "<group>"; };
+		5927D031B00FBAA6F6CF347857A8EF1A /* ALAssetsLibrary-CustomPhotoAlbum-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary-CustomPhotoAlbum-dummy.m"; sourceTree = "<group>"; };
+		611547FD105CD3C018E74C55C683C102 /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALAssetsLibrary+CustomPhotoAlbum.m"; path = "ALAssetsLibrary-CustomPhotoAlbum/ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		6115E42A0BFE65DB6A9E3D381F17C096 /* ALAssetsLibrary-CustomPhotoAlbum-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ALAssetsLibrary-CustomPhotoAlbum-Private.xcconfig"; sourceTree = "<group>"; };
+		66B9D36456B3F98ACB03DB7900E96918 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE92CC2096CAE50B8DB94DB862C4BE68 /* Pods-Scribbly-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Scribbly-resources.sh"; sourceTree = "<group>"; };
+		B2842A604929837DB6A0D1F7A49E850C /* Pods-Scribbly-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Scribbly-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C779212E696A0770FA1113256E98872E /* Pods-Scribbly-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Scribbly-dummy.m"; sourceTree = "<group>"; };
+		CD8067ADACA84D4050F02F2A4E2D2B3E /* Pods-Scribbly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Scribbly.debug.xcconfig"; sourceTree = "<group>"; };
+		DD3DE092DD4DA35273CD2CFC5F1D2E51 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		E120AD9CB126C483CB864BCCFA242A25 /* Pods-Scribbly-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Scribbly-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52BF3CAE487AC3A935768DA792F0105D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B85BB9C1EADC9A0CEF2840BA22ACA491 /* AssetsLibrary.framework in Frameworks */,
+				AF9276976D10A9D7F2E25968D890679E /* Foundation.framework in Frameworks */,
+				DEF3DED48299FE000CEBEB8563E4D11B /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1839FF41986C15C8963E72F18FE82F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				608C41F99027CCC7478C607F4A2E3731 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5881622090699AFEFFA88273C0394D94 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FBCA1CEC8C8ED1E79CB2F09E757089E /* Pods-Scribbly */ = {
+			isa = PBXGroup;
+			children = (
+				B2842A604929837DB6A0D1F7A49E850C /* Pods-Scribbly-acknowledgements.markdown */,
+				E120AD9CB126C483CB864BCCFA242A25 /* Pods-Scribbly-acknowledgements.plist */,
+				C779212E696A0770FA1113256E98872E /* Pods-Scribbly-dummy.m */,
+				AE92CC2096CAE50B8DB94DB862C4BE68 /* Pods-Scribbly-resources.sh */,
+				CD8067ADACA84D4050F02F2A4E2D2B3E /* Pods-Scribbly.debug.xcconfig */,
+				52AC9102F8B916F058A5540531E85E6E /* Pods-Scribbly.release.xcconfig */,
+			);
+			name = "Pods-Scribbly";
+			path = "Target Support Files/Pods-Scribbly";
+			sourceTree = "<group>";
+		};
+		5881622090699AFEFFA88273C0394D94 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DD3DE092DD4DA35273CD2CFC5F1D2E51 /* AssetsLibrary.framework */,
+				2D2C14E42F7F32D65B0D0BE77E5CF427 /* Foundation.framework */,
+				66B9D36456B3F98ACB03DB7900E96918 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		67CBBE6E1D60E98514E79583EF0D2ADB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FBCA1CEC8C8ED1E79CB2F09E757089E /* Pods-Scribbly */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6AAC8016D7A7B3CDD2AA9C4F3A354643 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B622EEC446542F273989BA422E81135B /* ALAssetsLibrary-CustomPhotoAlbum */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				6AAC8016D7A7B3CDD2AA9C4F3A354643 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				67CBBE6E1D60E98514E79583EF0D2ADB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AA757B92DB9760A3147718D8B654C340 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AE482697171009427C05E89D6B3B7FD /* ALAssetsLibrary-CustomPhotoAlbum.xcconfig */,
+				6115E42A0BFE65DB6A9E3D381F17C096 /* ALAssetsLibrary-CustomPhotoAlbum-Private.xcconfig */,
+				5927D031B00FBAA6F6CF347857A8EF1A /* ALAssetsLibrary-CustomPhotoAlbum-dummy.m */,
+				2A6904C226982E5A895D64C41BF506A1 /* ALAssetsLibrary-CustomPhotoAlbum-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ALAssetsLibrary-CustomPhotoAlbum";
+			sourceTree = "<group>";
+		};
+		B622EEC446542F273989BA422E81135B /* ALAssetsLibrary-CustomPhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				19F453CDA6B78716E4F188DEA3808A3C /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				611547FD105CD3C018E74C55C683C102 /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+				AA757B92DB9760A3147718D8B654C340 /* Support Files */,
+			);
+			path = "ALAssetsLibrary-CustomPhotoAlbum";
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42173380681DC665ED9FD1907FFD9728 /* libALAssetsLibrary-CustomPhotoAlbum.a */,
+				0A4859542AAACCD095034AD4F81B7E50 /* libPods-Scribbly.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C72C0760AD610C9A82DC355AB65EA0CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CF1BF3B27C12D3DC63B2C9B93FD574A /* ALAssetsLibrary+CustomPhotoAlbum.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D02F66032E80DA426F9D3F3ACBD56CD9 /* ALAssetsLibrary-CustomPhotoAlbum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C45EF66B8CBF0BA568CF41B76F795416 /* Build configuration list for PBXNativeTarget "ALAssetsLibrary-CustomPhotoAlbum" */;
+			buildPhases = (
+				C17DC57BE26CFF2E94B154A56CDDBB46 /* Sources */,
+				52BF3CAE487AC3A935768DA792F0105D /* Frameworks */,
+				C72C0760AD610C9A82DC355AB65EA0CF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ALAssetsLibrary-CustomPhotoAlbum";
+			productName = "ALAssetsLibrary-CustomPhotoAlbum";
+			productReference = 42173380681DC665ED9FD1907FFD9728 /* libALAssetsLibrary-CustomPhotoAlbum.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DCC4C3DB467D48FE8443B5933E067B86 /* Pods-Scribbly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA697508A988B25DAC8B61DE34500374 /* Build configuration list for PBXNativeTarget "Pods-Scribbly" */;
+			buildPhases = (
+				E1D43C28E0CC6EC743C35CAE5DF8070D /* Sources */,
+				CE1839FF41986C15C8963E72F18FE82F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A6F063FEBD4F07BDE2BB6D19EC2E280 /* PBXTargetDependency */,
+			);
+			name = "Pods-Scribbly";
+			productName = "Pods-Scribbly";
+			productReference = 0A4859542AAACCD095034AD4F81B7E50 /* libPods-Scribbly.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D02F66032E80DA426F9D3F3ACBD56CD9 /* ALAssetsLibrary-CustomPhotoAlbum */,
+				DCC4C3DB467D48FE8443B5933E067B86 /* Pods-Scribbly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C17DC57BE26CFF2E94B154A56CDDBB46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49BE8C478450ED437785CCFD4AAEF8C9 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
+				6DC2430975254E5C81AC98CC1FCA8F66 /* ALAssetsLibrary-CustomPhotoAlbum-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1D43C28E0CC6EC743C35CAE5DF8070D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5C980FBD139238F2E0B72E5F2C83F0 /* Pods-Scribbly-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A6F063FEBD4F07BDE2BB6D19EC2E280 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ALAssetsLibrary-CustomPhotoAlbum";
+			target = D02F66032E80DA426F9D3F3ACBD56CD9 /* ALAssetsLibrary-CustomPhotoAlbum */;
+			targetProxy = 45EB73EC2A13676BCF1967E9B2319FD3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		37CDDA4496C0494105D0AC9CCAE202E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD8067ADACA84D4050F02F2A4E2D2B3E /* Pods-Scribbly.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C862006A4FB46B6AFD085FB724C8394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6115E42A0BFE65DB6A9E3D381F17C096 /* ALAssetsLibrary-CustomPhotoAlbum-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ALAssetsLibrary-CustomPhotoAlbum/ALAssetsLibrary-CustomPhotoAlbum-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		78D44542BA75AD58D25DB60FFB07F81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52AC9102F8B916F058A5540531E85E6E /* Pods-Scribbly.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CD60DA78F696F4F931D9E5BF89ACD002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6115E42A0BFE65DB6A9E3D381F17C096 /* ALAssetsLibrary-CustomPhotoAlbum-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ALAssetsLibrary-CustomPhotoAlbum/ALAssetsLibrary-CustomPhotoAlbum-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA697508A988B25DAC8B61DE34500374 /* Build configuration list for PBXNativeTarget "Pods-Scribbly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37CDDA4496C0494105D0AC9CCAE202E4 /* Debug */,
+				78D44542BA75AD58D25DB60FFB07F81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C45EF66B8CBF0BA568CF41B76F795416 /* Build configuration list for PBXNativeTarget "ALAssetsLibrary-CustomPhotoAlbum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C862006A4FB46B6AFD085FB724C8394 /* Debug */,
+				CD60DA78F696F4F931D9E5BF89ACD002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

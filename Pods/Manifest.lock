@@ -1,0 +1,10 @@
+PODS:
+  - ALAssetsLibrary-CustomPhotoAlbum (1.3.0)
+
+DEPENDENCIES:
+  - ALAssetsLibrary-CustomPhotoAlbum
+
+SPEC CHECKSUMS:
+  ALAssetsLibrary-CustomPhotoAlbum: 4df413c22294b310f47c5525fa99523fd43419f9
+
+COCOAPODS: 0.38.2
