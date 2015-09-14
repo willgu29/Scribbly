@@ -337,8 +337,7 @@ float clamp(float value, float lower, float higher)
 -(void)setupDrawing
 {
     //INIT
-    self.userInteractionEnabled = YES;
-    [self setMultipleTouchEnabled:YES];
+    [self setMultipleTouchEnabled:NO];
     drawingQueue = dispatch_queue_create("drawingQueue", NULL);
     
     self.opaque = NO;

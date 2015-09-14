@@ -40,9 +40,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.userInteractionEnabled = YES;
+    
     _containerView.userInteractionEnabled = YES;
-    self.view.multipleTouchEnabled = YES;
     self.containerView.multipleTouchEnabled = YES;
     // Do any additional setup after loading the view.
     _photoLibrary = [[ALAssetsLibrary alloc] init];
@@ -168,6 +167,10 @@
 {
     [self closeControlPanel];
     [_drawView eraseDrawing:nil];
+    for (int i = 0; i < [_textFieldReferences count]; i++) {
+        UITextField *textField = [_textFieldReferences objectAtIndex:i];
+        [textField removeFromSuperview];
+    }
 }
 
 #pragma mark - Orientation Changes
