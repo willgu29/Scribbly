@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ControlPanelView.h"
+#import "TextFieldCreator.h"
 
-@interface DrawViewController : UIViewController
+@interface DrawViewController : UIViewController <ControlPanelViewDelegate,TextFieldCreatorDelegate>
 
 @end

@@ -8,19 +8,26 @@
 
 #import "DrawViewController.h"
 #import "BezierPathView.h"
-#import "ControlPanelView.h"
+
 
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
-@interface DrawViewController () <ControlPanelViewDelegate>
+@interface DrawViewController () 
 {
     BOOL isControlPanelShowing;
+    BOOL isSaved;
+    BOOL isDoubleTapped;
+    UIView *lastSelectedView;
 }
+
+@property (nonatomic, strong) IBOutlet UIView *containerView;
 
 @property (nonatomic, strong) IBOutlet BezierPathView *drawView;
 @property (nonatomic, strong) ControlPanelView *cpView;
 
+@property (nonatomic, strong) TextFieldCreator *tfCreator;
 @property (nonatomic, strong) ALAssetsLibrary *photoLibrary;
+@property (nonatomic, strong) NSMutableArray *textFieldReferences;
 
 
 @property (nonatomic, strong) UIButton *lastSelectedColorButton;
@@ -33,9 +40,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.userInteractionEnabled = YES;
+    _containerView.userInteractionEnabled = YES;
+    self.view.multipleTouchEnabled = YES;
+    self.containerView.multipleTouchEnabled = YES;
     // Do any additional setup after loading the view.
     _photoLibrary = [[ALAssetsLibrary alloc] init];
-
+    _tfCreator = [[TextFieldCreator alloc] init];
+    _tfCreator.delegate = self;
+    _textFieldReferences = [[NSMutableArray alloc] init];
+    
     isControlPanelShowing = NO;
     
    
@@ -45,7 +59,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [_drawView setupDrawing];
-    
     //INIT cpView
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ControlPanelView" owner:self options:nil];
     _cpView = [nib objectAtIndex:0];
@@ -96,6 +109,40 @@
     isControlPanelShowing = YES;
 }
 
+-(IBAction)addText:(UIButton *)sender
+{
+    CGPoint textLocation = CGPointMake(20, self.view.frame.size.height/3);
+    UITextField *textField = [_tfCreator createGestureTextField:@"Double Tap to Edit" atLocation:textLocation];
+//    [self createGestureTextField:@"Double Tap to Edit" atLocation:textLocation];
+    
+//    textField.delegate= self;
+//
+    [self.containerView addSubview:textField];
+    
+    [_textFieldReferences addObject:textField];
+    lastSelectedView = textField;
+    
+    isSaved = NO;
+}
+-(IBAction)addBackground:(UIButton *)sender
+{
+    
+}
+
+
+
+
+#pragma mark - TextFieldCreatorDelegate
+-(void)newViewSelected:(UIView *)view
+{
+    lastSelectedView = view;
+}
+-(void)textFieldDoneEditing:(UIView *)view
+{
+    isSaved = NO;
+}
+
+
 #pragma mark - ControlPanelDelegate
 
 -(void)savePicture
@@ -108,7 +155,7 @@
         
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Saved" message:@"Your photo has been saved in both your Scribbly album \nand camera roll!" delegate:nil cancelButtonTitle:@"Great!" otherButtonTitles:nil];
         [alertView show];
-        //_isSaved = YES;
+        isSaved = YES;
         
     } failure:^(NSError *error) {
         NSLog(@"Error: %@", error);
@@ -158,6 +205,9 @@
 }
 
 #pragma mark - Helper functions
+
+
+
 -(UIImage *)formNewUIImage
 {
     
@@ -179,5 +229,13 @@
     [_cpView removeFromSuperview];
     isControlPanelShowing = NO;
 }
+
+
+
+
+
+
+
+
 
 @end
