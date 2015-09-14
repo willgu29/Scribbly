@@ -197,6 +197,8 @@ typedef struct
     UITouch *touch = [touches anyObject];
     pts[0] = [touch locationInView:self];
     isFirstTouchPoint = YES;
+
+    
     
 }
 
@@ -330,6 +332,28 @@ float clamp(float value, float lower, float higher)
     if (value < lower) return lower;
     if (value > higher) return higher;
     return value;
+}
+
+-(void)setupDrawing
+{
+    //INIT
+    [self setMultipleTouchEnabled:NO];
+    drawingQueue = dispatch_queue_create("drawingQueue", NULL);
+    
+    self.opaque = NO;
+    self.backgroundColor = [UIColor blackColor]; //Change this to change background color
+    
+    
+    incrementalImage = [[UIImageView alloc] initWithFrame:self.bounds];
+    incrementalImage.backgroundColor = [UIColor clearColor];
+    incrementalImage.opaque = NO;
+    [self addSubview:incrementalImage];
+    _pathColor = [UIColor whiteColor];
+    pathReference = CGPathCreateMutable();
+    _fullPath = [[NSMutableArray alloc] init];
+    
+    [self addGestureRecognizer:[self createLongPressGesture]];
+    ///***
 }
 
 

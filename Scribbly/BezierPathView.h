@@ -17,5 +17,6 @@
 -(CGMutablePathRef)getReferencePath;
 
 -(void)setPathColor:(UIColor *)color;
+-(void)setupDrawing;
 
 @end

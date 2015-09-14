@@ -8,10 +8,14 @@
 
 #import "DrawViewController.h"
 #import "BezierPathView.h"
-
+#import "ControlPanelView.h"
 @interface DrawViewController ()
+{
+    BOOL isControlPanelShowing;
+}
 
-@property (nonatomic, strong) BezierPathView *drawView;
+@property (nonatomic, strong) IBOutlet BezierPathView *drawView;
+@property (nonatomic, strong) ControlPanelView *cpView;
 
 @property (nonatomic, strong) UIButton *lastSelectedColorButton;
 
@@ -24,29 +28,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    isControlPanelShowing = NO;
     
-    
-    
-    _drawView = [[BezierPathView alloc] init];
-    [self.view addSubview:_drawView];
-    
-    _drawView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
+   
+//
+//    [_drawView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+//
+//    
+//    _drawView.translatesAutoresizingMaskIntoConstraints = NO;
+//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
+//    
     [self registerOrientationChangeObserver];
-    [self addDrawViewConstraints];
 
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    [_drawView setupDrawing];
     
+    //INIT cpView
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ControlPanelView" owner:self options:nil];
+    _cpView = [nib objectAtIndex:0];
 
-  
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,8 +59,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Color Change
--(void)colorButtonSelected:(UIButton *)sender
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (isControlPanelShowing)
+    {
+        [_cpView removeFromSuperview];
+        isControlPanelShowing = NO;
+    }
+}
+
+#pragma mark - IBActions
+-(IBAction)colorButtonSelected:(UIButton *)sender
 {
     UIColor *colorSelected = sender.backgroundColor;
     
@@ -69,6 +83,16 @@
     _lastSelectedColorButton.layer.borderWidth = 0;
     _lastSelectedColorButton = sender;
     [_drawView setPathColor:colorSelected];
+}
+
+-(IBAction)controlPanel:(UIButton *)sender
+{
+    //TODO: Animate
+    CGRect frame = CGRectMake(self.view.frame.size.width/2-100, self.view.frame.size.height/2-100, 200, 200);
+    _cpView.frame = frame;
+    [self.view addSubview:_cpView];
+    
+    isControlPanelShowing = YES;
 }
 
 #pragma mark - Create View Objects
@@ -148,6 +172,10 @@
 }
 -(void)orientationChanged:(NSNotification *)notification
 {
+    //Reorient control panel
+    [_cpView removeFromSuperview];
+   
+    
     UIDevice * device = notification.object;
     switch(device.orientation)
     {
