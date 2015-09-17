@@ -17,7 +17,7 @@
 
 @implementation TextFieldCreator
 
-const int DEFAULT_FONT_SIZE = 25;
+const int DEFAULT_FONT_SIZE = 30;
 
 -(instancetype)init
 {
@@ -103,6 +103,9 @@ const int DEFAULT_FONT_SIZE = 25;
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     CGPoint centerPoint = textField.center;
+    if (textField.text.length < 3) {
+        [textField setFont:[UIFont fontWithName:@"Avenir" size:100]];
+    }
     [textField sizeToFit];
     textField.center = centerPoint;
     //isSaved = NO;
