@@ -11,6 +11,15 @@
 		8400C0C31BA66722004B779D /* ControlPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400C0C21BA66722004B779D /* ControlPanelView.m */; };
 		8400C0C51BA6673E004B779D /* ControlPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400C0C41BA6673E004B779D /* ControlPanelView.xib */; };
 		8400C0C91BA67732004B779D /* TextFieldCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400C0C81BA67732004B779D /* TextFieldCreator.m */; };
+		8400C0D21BA79EF6004B779D /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400C0D01BA79EF6004B779D /* BackgroundViewController.swift */; };
+		8400C0D31BA79EF6004B779D /* BackgroundViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400C0D11BA79EF6004B779D /* BackgroundViewController.xib */; };
+		8400C0D61BA7A1F4004B779D /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400C0D41BA7A1F4004B779D /* GroupCollectionViewCell.swift */; };
+		8400C0D71BA7A1F4004B779D /* GroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8400C0D51BA7A1F4004B779D /* GroupCollectionViewCell.xib */; };
+		8400C0DE1BAA37A6004B779D /* PhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400C0DD1BAA37A6004B779D /* PhotoFetcher.m */; };
+		8400C0E11BAA37BD004B779D /* ALAsset+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400C0E01BAA37BD004B779D /* ALAsset+Date.m */; };
+		8400C0E31BAA3BEC004B779D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8400C0E21BAA3BEC004B779D /* AssetsLibrary.framework */; };
+		8400C0E51BAA3BF8004B779D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8400C0E41BAA3BF8004B779D /* Photos.framework */; };
+		8400C0E71BAA3BFE004B779D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8400C0E61BAA3BFE004B779D /* MobileCoreServices.framework */; };
 		84EAAFB81B75483400D7E59C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFB71B75483400D7E59C /* main.m */; };
 		84EAAFBB1B75483400D7E59C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFBA1B75483400D7E59C /* AppDelegate.m */; };
 		84EAAFBE1B75483400D7E59C /* Scribbly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84EAAFBC1B75483400D7E59C /* Scribbly.xcdatamodeld */; };
@@ -40,6 +49,18 @@
 		8400C0C41BA6673E004B779D /* ControlPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlPanelView.xib; sourceTree = "<group>"; };
 		8400C0C71BA67732004B779D /* TextFieldCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCreator.h; sourceTree = "<group>"; };
 		8400C0C81BA67732004B779D /* TextFieldCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCreator.m; sourceTree = "<group>"; };
+		8400C0CF1BA79EF5004B779D /* Scribbly-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scribbly-Bridging-Header.h"; sourceTree = "<group>"; };
+		8400C0D01BA79EF6004B779D /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
+		8400C0D11BA79EF6004B779D /* BackgroundViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundViewController.xib; sourceTree = "<group>"; };
+		8400C0D41BA7A1F4004B779D /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
+		8400C0D51BA7A1F4004B779D /* GroupCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupCollectionViewCell.xib; sourceTree = "<group>"; };
+		8400C0DC1BAA37A6004B779D /* PhotoFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoFetcher.h; sourceTree = "<group>"; };
+		8400C0DD1BAA37A6004B779D /* PhotoFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoFetcher.m; sourceTree = "<group>"; };
+		8400C0DF1BAA37BD004B779D /* ALAsset+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAsset+Date.h"; sourceTree = "<group>"; };
+		8400C0E01BAA37BD004B779D /* ALAsset+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAsset+Date.m"; sourceTree = "<group>"; };
+		8400C0E21BAA3BEC004B779D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		8400C0E41BAA3BF8004B779D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		8400C0E61BAA3BFE004B779D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		84EAAFB21B75483400D7E59C /* Scribbly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scribbly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EAAFB61B75483400D7E59C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84EAAFB71B75483400D7E59C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8400C0E71BAA3BFE004B779D /* MobileCoreServices.framework in Frameworks */,
+				8400C0E51BAA3BF8004B779D /* Photos.framework in Frameworks */,
+				8400C0E31BAA3BEC004B779D /* AssetsLibrary.framework in Frameworks */,
 				21CF532872875517DDBEEBC1 /* libPods-Scribbly.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +112,10 @@
 		8400C0C61BA6771C004B779D /* APIs */ = {
 			isa = PBXGroup;
 			children = (
+				8400C0DF1BAA37BD004B779D /* ALAsset+Date.h */,
+				8400C0E01BAA37BD004B779D /* ALAsset+Date.m */,
+				8400C0DC1BAA37A6004B779D /* PhotoFetcher.h */,
+				8400C0DD1BAA37A6004B779D /* PhotoFetcher.m */,
 				8400C0C71BA67732004B779D /* TextFieldCreator.h */,
 				8400C0C81BA67732004B779D /* TextFieldCreator.m */,
 			);
@@ -129,6 +157,9 @@
 				84EAAFDE1B7548AC00D7E59C /* DrawViewController.h */,
 				84EAAFDF1B7548AC00D7E59C /* DrawViewController.m */,
 				84EAB01D1B798F9700D7E59C /* DrawViewController.xib */,
+				8400C0D01BA79EF6004B779D /* BackgroundViewController.swift */,
+				8400C0D11BA79EF6004B779D /* BackgroundViewController.xib */,
+				8400C0CF1BA79EF5004B779D /* Scribbly-Bridging-Header.h */,
 			);
 			path = Scribbly;
 			sourceTree = "<group>";
@@ -162,6 +193,8 @@
 		84EAB0191B75E0B300D7E59C /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				8400C0D41BA7A1F4004B779D /* GroupCollectionViewCell.swift */,
+				8400C0D51BA7A1F4004B779D /* GroupCollectionViewCell.xib */,
 				8400C0C11BA66722004B779D /* ControlPanelView.h */,
 				8400C0C21BA66722004B779D /* ControlPanelView.m */,
 				8400C0C41BA6673E004B779D /* ControlPanelView.xib */,
@@ -172,6 +205,9 @@
 		86DEE9ACF3C97EC8FA59CF59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8400C0E61BAA3BFE004B779D /* MobileCoreServices.framework */,
+				8400C0E41BAA3BF8004B779D /* Photos.framework */,
+				8400C0E21BAA3BEC004B779D /* AssetsLibrary.framework */,
 				658BC2320C3A2978F0D90EA7 /* libPods-Scribbly.a */,
 			);
 			name = Frameworks;
@@ -259,6 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8400C0D31BA79EF6004B779D /* BackgroundViewController.xib in Resources */,
+				8400C0D71BA7A1F4004B779D /* GroupCollectionViewCell.xib in Resources */,
 				8400C0C51BA6673E004B779D /* ControlPanelView.xib in Resources */,
 				84EAB01E1B798F9700D7E59C /* DrawViewController.xib in Resources */,
 				84EAAFC61B75483400D7E59C /* Images.xcassets in Resources */,
@@ -312,12 +350,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8400C0D21BA79EF6004B779D /* BackgroundViewController.swift in Sources */,
 				84EAAFE01B7548AC00D7E59C /* DrawViewController.m in Sources */,
 				84EAAFBB1B75483400D7E59C /* AppDelegate.m in Sources */,
+				8400C0D61BA7A1F4004B779D /* GroupCollectionViewCell.swift in Sources */,
+				8400C0DE1BAA37A6004B779D /* PhotoFetcher.m in Sources */,
 				8400C0C91BA67732004B779D /* TextFieldCreator.m in Sources */,
 				84EAAFE31B75497900D7E59C /* BezierPathView.m in Sources */,
 				84EAAFB81B75483400D7E59C /* main.m in Sources */,
 				8400C0C31BA66722004B779D /* ControlPanelView.m in Sources */,
+				8400C0E11BAA37BD004B779D /* ALAsset+Date.m in Sources */,
 				84EAAFBE1B75483400D7E59C /* Scribbly.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,10 +469,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Scribbly/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scribbly/Scribbly-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -440,10 +485,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Scribbly/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scribbly/Scribbly-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -30,6 +30,20 @@ const int DEFAULT_FONT_SIZE = 25;
     return self;
 }
 
+-(UIImageView *)createImageView:(UIImage *)image atLocation:(CGPoint)location
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: image];
+    imageView.frame = CGRectMake(0, 0, 200, 200);
+    imageView.userInteractionEnabled = YES;
+    imageView.multipleTouchEnabled = YES;
+    [imageView addGestureRecognizer:[self createPanGesture]];
+    [imageView addGestureRecognizer:[self createRotateGesture]];
+    [imageView addGestureRecognizer:[self createPinchGesture]];
+    
+    return imageView;
+    
+}
+
 -(UITextField *)createGestureTextField:(NSString *)message atLocation:(CGPoint)location
 {
     
@@ -46,7 +60,7 @@ const int DEFAULT_FONT_SIZE = 25;
     label.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
     
-    [label setFont:[UIFont fontWithName:@"Academy Engraved LET" size:25]];
+    [label setFont:[UIFont fontWithName:@"Avenir" size:25]];
     
     label.textColor = [UIColor whiteColor];
     label.userInteractionEnabled = YES;
@@ -82,6 +96,7 @@ const int DEFAULT_FONT_SIZE = 25;
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     NSLog(@"Edit begin");
+    [_delegate textFieldBeganEditing:textField];
     [textField becomeFirstResponder];
     [textField selectAll:nil];
 }

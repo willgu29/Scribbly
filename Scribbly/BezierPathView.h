@@ -18,5 +18,6 @@
 
 -(void)setPathColor:(UIColor *)color;
 -(void)setupDrawing;
+-(void)changeBackgroundColor:(UIColor *)color;
 
 @end

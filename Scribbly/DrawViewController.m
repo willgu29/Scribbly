@@ -6,28 +6,34 @@
 //  Copyright (c) 2015 Gu Studios. All rights reserved.
 //
 
+@class BackgroundViewController;
+
+#import "Scribbly-Swift.h"
+
 #import "DrawViewController.h"
 #import "BezierPathView.h"
 
 
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 
-@interface DrawViewController () 
+@interface DrawViewController () <BackgroundSelectorDelegate>
 {
+    BOOL textFieldEditing;
     BOOL isControlPanelShowing;
     BOOL isSaved;
     BOOL isDoubleTapped;
     UIView *lastSelectedView;
 }
 
-@property (nonatomic, strong) IBOutlet UIView *containerView;
+@property (nonatomic, weak) IBOutlet UIView *containerView;
 
-@property (nonatomic, strong) IBOutlet BezierPathView *drawView;
+@property (nonatomic, weak) IBOutlet BezierPathView *drawView;
 @property (nonatomic, strong) ControlPanelView *cpView;
 
 @property (nonatomic, strong) TextFieldCreator *tfCreator;
 @property (nonatomic, strong) ALAssetsLibrary *photoLibrary;
 @property (nonatomic, strong) NSMutableArray *textFieldReferences;
+@property (nonatomic, strong) NSMutableArray *pictureReferences;
 
 
 @property (nonatomic, strong) UIButton *lastSelectedColorButton;
@@ -40,7 +46,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    textFieldEditing = NO;
     _containerView.userInteractionEnabled = YES;
     self.containerView.multipleTouchEnabled = YES;
     // Do any additional setup after loading the view.
@@ -48,20 +54,23 @@
     _tfCreator = [[TextFieldCreator alloc] init];
     _tfCreator.delegate = self;
     _textFieldReferences = [[NSMutableArray alloc] init];
+    _pictureReferences = [[NSMutableArray alloc] init];
     
     isControlPanelShowing = NO;
     
-   
+    [_drawView setupDrawing];
     [self registerOrientationChangeObserver];
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    [_drawView setupDrawing];
     //INIT cpView
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ControlPanelView" owner:self options:nil];
     _cpView = [nib objectAtIndex:0];
     _cpView.delegate = self;
+
+
 
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -96,6 +105,13 @@
     _lastSelectedColorButton.layer.borderWidth = 0;
     _lastSelectedColorButton = sender;
     [_drawView setPathColor:colorSelected];
+    
+    if (textFieldEditing) {
+        if ([lastSelectedView isKindOfClass:[UITextField class]]){
+            UITextField *textField = (UITextField *)lastSelectedView;
+            textField.textColor = colorSelected;
+        }
+    }
 }
 
 -(IBAction)controlPanel:(UIButton *)sender
@@ -125,7 +141,9 @@
 }
 -(IBAction)addBackground:(UIButton *)sender
 {
-    
+    BackgroundViewController *backgroundVC = [[BackgroundViewController alloc] initWithNibName:@"BackgroundViewController" bundle:nil];
+    backgroundVC.delegate = self;
+    [self presentViewController:backgroundVC animated:YES completion:nil];
 }
 
 
@@ -136,9 +154,15 @@
 {
     lastSelectedView = view;
 }
+-(void)textFieldBeganEditing:(UIView *)view
+{
+    lastSelectedView = view;
+    textFieldEditing = YES;
+}
 -(void)textFieldDoneEditing:(UIView *)view
 {
     isSaved = NO;
+    textFieldEditing = NO;
 }
 
 
@@ -170,6 +194,10 @@
     for (int i = 0; i < [_textFieldReferences count]; i++) {
         UITextField *textField = [_textFieldReferences objectAtIndex:i];
         [textField removeFromSuperview];
+    }
+    for (int i = 0; i < [_pictureReferences count]; i++) {
+        UIImageView *imageView = [_pictureReferences objectAtIndex:i];
+        [imageView removeFromSuperview];
     }
 }
 
@@ -209,7 +237,20 @@
 
 #pragma mark - Helper functions
 
-
+-(void)newBackgroundSelected:(UIColor *)backgroundColor
+{
+    [_drawView changeBackgroundColor:backgroundColor];
+}
+-(void)newImageSelected:(ALAsset *)newImage
+{
+    UIImage *image = [[UIImage alloc] initWithCGImage:[newImage thumbnail]];
+    UIImageView *imageView = [_tfCreator createImageView:image atLocation:CGPointMake(10, 10)];
+    [self.containerView addSubview:imageView];
+    
+    [_pictureReferences addObject:imageView];
+    
+    
+}
 
 -(UIImage *)formNewUIImage
 {

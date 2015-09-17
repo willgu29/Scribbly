@@ -12,6 +12,7 @@
 @protocol TextFieldCreatorDelegate <NSObject>
 
 -(void)newViewSelected:(UIView *)view;
+-(void)textFieldBeganEditing:(UIView *)view;
 -(void)textFieldDoneEditing:(UIView *)view;
 
 @end
@@ -20,5 +21,5 @@
 
 @property (nonatomic, assign) id delegate;
 -(UITextField *)createGestureTextField:(NSString *)message atLocation:(CGPoint)location;
-
+-(UIImageView *)createImageView:(UIImage *)image atLocation:(CGPoint)location;
 @end

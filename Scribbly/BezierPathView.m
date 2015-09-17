@@ -51,16 +51,20 @@ typedef struct
     [super setFrame:frame];
 }
 
+-(void)changeBackgroundColor:(UIColor *)color
+{
+    self.backgroundColor = color;
+}
 -(void)setPathColor:(UIColor *)color
 {
     _pathColor = color;
-    if ([color isEqual:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]]) {
-        self.backgroundColor = [UIColor whiteColor];
-    } else  if ([color isEqual:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]]){
-        self.backgroundColor = [UIColor blackColor];
-    } else {
-        //nothing
-    }
+//    if ([color isEqual:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]]) {
+//        self.backgroundColor = [UIColor whiteColor];
+//    } else  if ([color isEqual:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]]){
+//        self.backgroundColor = [UIColor blackColor];
+//    } else {
+//        //nothing
+//    }
 }
 
 -(NSMutableArray *)getFullPath
@@ -80,23 +84,23 @@ typedef struct
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        [self setMultipleTouchEnabled:NO];
-        drawingQueue = dispatch_queue_create("drawingQueue", NULL);
-        
-        self.opaque = NO;
-        self.backgroundColor = [UIColor blackColor]; //Change this to change background color
-        
-        
-        incrementalImage = [[UIImageView alloc] initWithFrame:self.bounds];
-        incrementalImage.backgroundColor = [UIColor clearColor];
-        incrementalImage.opaque = NO;
-        [self addSubview:incrementalImage];
-        _pathColor = [UIColor whiteColor];
-        pathReference = CGPathCreateMutable();
-        _fullPath = [[NSMutableArray alloc] init];
-        
-        [self addGestureRecognizer:[self createLongPressGesture]];
+//        
+//        [self setMultipleTouchEnabled:NO];
+//        drawingQueue = dispatch_queue_create("drawingQueue", NULL);
+//        
+//        self.opaque = NO;
+//        self.backgroundColor = [UIColor blackColor]; //Change this to change background color
+//        
+//        
+//        incrementalImage = [[UIImageView alloc] initWithFrame:self.bounds];
+//        incrementalImage.backgroundColor = [UIColor clearColor];
+//        incrementalImage.opaque = NO;
+//        [self addSubview:incrementalImage];
+//        _pathColor = [UIColor whiteColor];
+//        pathReference = CGPathCreateMutable();
+//        _fullPath = [[NSMutableArray alloc] init];
+//        
+//        [self addGestureRecognizer:[self createLongPressGesture]];
     }
     return self;
 }
